@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goa Marine - Under Maintenance</title>
+    <title>Goa Marine - Premium Seafood Suppliers | B2B</title>
     <style>
         * {
             margin: 0;
@@ -13,189 +13,630 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #001a4d 0%, #003d82 50%, #0056b3 100%);
-            min-height: 100vh;
+            background: #ffffff;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #001a4d 0%, #003d82 100%);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
             display: flex;
             align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
+            gap: 15px;
         }
 
-        .wave {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 200px;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,50 Q300,100 600,50 T1200,50 L1200,120 L0,120 Z" fill="rgba(255,255,255,0.1)"/></svg>') repeat-x;
-            animation: wave 15s linear infinite;
+        .logo-img {
+            height: 50px;
+            width: auto;
         }
 
-        @keyframes wave {
-            0% { background-position: 0 0; }
-            100% { background-position: 1200px 0; }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 500;
+            transition: color 0.3s;
         }
 
-        .container {
+        nav a:hover {
+            color: #4dd0e1;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(0, 26, 77, 0.95), rgba(0, 61, 130, 0.95)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect fill="%23001a4d" width="100" height="100"/><circle cx="20" cy="20" r="2" fill="%23ffffff" opacity="0.1"/><circle cx="80" cy="40" r="2" fill="%23ffffff" opacity="0.1"/><circle cx="40" cy="80" r="2" fill="%23ffffff" opacity="0.1"/></svg>');
+            padding: 150px 20px 100px;
             text-align: center;
-            padding: 20px;
-            position: relative;
-            z-index: 10;
-            max-width: 800px;
+            color: white;
+            margin-top: 70px;
         }
 
-        .logo-container {
-            background: transparent;
-            padding: 20px;
-            margin-bottom: 40px;
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: #e0f7fa;
+        }
+
+        .cta-button {
+            background: #00bcd4;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
             display: inline-block;
         }
 
-        .logo-container img {
-            max-width: 600px;
-            width: 100%;
-            height: auto;
-            display: block;
-            filter: drop-shadow(0 10px 30px rgba(0,0,0,0.5));
+        .cta-button:hover {
+            background: #0097a7;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 188, 212, 0.4);
         }
 
-        .seafood-icons {
-            display: flex;
-            justify-content: center;
+        /* Stats Section */
+        .stats {
+            background: #f5f5f5;
+            padding: 60px 20px;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
-            margin: 40px 0;
-            flex-wrap: wrap;
         }
 
-        .icon {
-            width: 80px;
-            height: 80px;
-            background: rgba(255, 255, 255, 0.15);
+        .stat-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #001a4d;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1em;
+            color: #666;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            color: #001a4d;
+            margin-bottom: 50px;
+            font-weight: 700;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5em;
+            background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+        }
+
+        .product-info {
+            padding: 25px;
+        }
+
+        .product-category {
+            display: inline-block;
+            background: #00bcd4;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-bottom: 10px;
+        }
+
+        .product-name {
+            font-size: 1.4em;
+            color: #001a4d;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .product-desc {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Services Section */
+        .services {
+            background: linear-gradient(135deg, #001a4d 0%, #003d82 100%);
+            padding: 80px 20px;
+            color: white;
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .service-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .service-desc {
+            color: #e0f7fa;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .contact-card {
+            background: #f5f5f5;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: #00bcd4;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 40px;
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            animation: float 3s ease-in-out infinite;
+            margin: 0 auto 20px;
         }
 
-        .icon:nth-child(1) { animation-delay: 0s; }
-        .icon:nth-child(2) { animation-delay: 0.5s; }
-        .icon:nth-child(3) { animation-delay: 1s; }
-        .icon:nth-child(4) { animation-delay: 1.5s; }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-        }
-
-        h1 {
-            color: white;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        p {
-            color: rgba(255, 255, 255, 0.95);
-            font-size: 1.3em;
-            margin-bottom: 40px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-        }
-
-        .contact-info {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            padding: 30px;
-            border-radius: 15px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            display: inline-block;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            margin: 15px 0;
-            color: white;
-            font-size: 1.2em;
-        }
-
-        .contact-item svg {
-            width: 24px;
-            height: 24px;
+        .contact-icon svg {
+            width: 30px;
+            height: 30px;
             fill: white;
         }
 
-        .contact-item a {
-            color: white;
+        .contact-title {
+            font-size: 1.3em;
+            color: #001a4d;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .contact-info a {
+            color: #00bcd4;
             text-decoration: none;
-            transition: all 0.3s ease;
+            font-size: 1.1em;
+            transition: color 0.3s;
         }
 
-        .contact-item a:hover {
-            color: #ffeb3b;
-            transform: scale(1.05);
+        .contact-info a:hover {
+            color: #0097a7;
         }
 
-        .loader {
-            width: 60px;
-            height: 60px;
-            border: 5px solid rgba(255, 255, 255, 0.3);
-            border-top: 5px solid white;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 30px auto;
+        /* Footer */
+        footer {
+            background: #001a4d;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
         }
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-text {
+            color: #b3e5fc;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            h1 { font-size: 2em; }
-            p { font-size: 1.1em; }
-            .icon { width: 60px; height: 60px; font-size: 30px; }
-            .logo-container { padding: 20px 30px; }
+            .hero h1 {
+                font-size: 2em;
+            }
+            
+            .hero p {
+                font-size: 1.1em;
+            }
+            
+            nav {
+                display: none;
+            }
+            
+            .section-title {
+                font-size: 2em;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out;
         }
     </style>
 </head>
 <body>
-    <div class="wave"></div>
-    
-    <div class="container">
-        <div class="logo-container">
-            <img src="goamarine-logo.png" alt="Goa Marine">
-        </div>
-
-        <div class="seafood-icons">
-            <div class="icon">🐟</div>
-            <div class="icon">🦀</div>
-            <div class="icon">🦐</div>
-            <div class="icon">🦞</div>
-        </div>
-
-        <h1>Under Maintenance</h1>
-        <p>We're working hard to bring you the freshest seafood experience.<br>We'll be back shortly!</p>
-
-        <div class="loader"></div>
-
-        <div class="contact-info">
-            <h3 style="color: white; margin-bottom: 20px; font-size: 1.5em;">Get in Touch</h3>
-            <div class="contact-item">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                <a href="mailto:info@goamarine.com">info@goamarine.com</a>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="goamarine-logo.png" alt="Goa Marine" class="logo-img">
             </div>
-            <div class="contact-item">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
-                <a href="tel:+918275272334">+91 8275272334</a>
+            <nav>
+                <a href="#products">Products</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 class="fade-in">Our Daily Catch,<br>Delivered to Your Doorstep!</h1>
+        <p class="fade-in">Premium quality seafood straight from Goan waters. Serving restaurants, hotels, and businesses with the freshest catch.</p>
+        <a href="#contact" class="cta-button">Get in Touch</a>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-icon">🏨</div>
+                <div class="stat-number">150+</div>
+                <div class="stat-label">Restaurants & Hotels</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🐟</div>
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Seafood Varieties</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⭐</div>
+                <div class="stat-number">A+</div>
+                <div class="stat-label">Quality Grade</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🚚</div>
+                <div class="stat-number">Daily</div>
+                <div class="stat-label">Fresh Delivery</div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <h2 class="section-title">Our Premium Selection</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image">🐟</div>
+                <div class="product-info">
+                    <span class="product-category">Fresh Fish</span>
+                    <h3 class="product-name">King Fish (Surmai)</h3>
+                    <p class="product-desc">Premium quality king fish, perfect for steaks and grilling. Rich in Omega-3 fatty acids.</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">🐠</div>
+                <div class="product-info">
+                    <span class="product-category">Fresh Fish</span>
+                    <h3 class="product-name">Pomfret</h3>
+                    <p class="product-desc">Tender and flavorful, ideal for traditional Goan dishes and frying.</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">🦐</div>
+                <div class="product-info">
+                    <span class="product-category">Prawns</span>
+                    <h3 class="product-name">Tiger Prawns</h3>
+                    <p class="product-desc">Large, succulent prawns perfect for premium dishes and grilling.</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">🦀</div>
+                <div class="product-info">
+                    <span class="product-category">Crabs</span>
+                    <h3 class="product-name">Goan Crab</h3>
+                    <p class="product-desc">Locally sourced, fresh crabs ideal for curries and traditional recipes.</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">🦞</div>
+                <div class="product-info">
+                    <span class="product-category">Premium</span>
+                    <h3 class="product-name">Lobster</h3>
+                    <p class="product-desc">Premium lobster for upscale dining experiences and special occasions.</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">🐟</div>
+                <div class="product-info">
+                    <span class="product-category">Fresh Fish</span>
+                    <h3 class="product-name">Mackerel (Bangda)</h3>
+                    <p class="product-desc">Fresh mackerel, perfect for traditional Goan dishes and frying.</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">🦑</div>
+                <div class="product-info">
+                    <span class="product-category">Seafood</span>
+                    <h3 class="product-name">Squid</h3>
+                    <p class="product-desc">Tender squid rings, ideal for frying, grilling, and seafood platters.</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">🐟</div>
+                <div class="product-info">
+                    <span class="product-category">Fresh Fish</span>
+                    <h3 class="product-name">Rock Fish (Gobro)</h3>
+                    <p class="product-desc">Nutrient-rich grouper, perfect for grilling and traditional preparations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="services-container">
+            <h2 class="section-title" style="color: white;">Why Choose Goa Marine?</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🌊</div>
+                    <h3 class="service-title">Fresh Daily Catch</h3>
+                    <p class="service-desc">Direct sourcing from local fishermen ensures the freshest seafood every day.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">❄️</div>
+                    <h3 class="service-title">Cold Chain Maintained</h3>
+                    <p class="service-desc">Proper temperature control from catch to delivery maintains premium quality.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">✂️</div>
+                    <h3 class="service-title">Professional Cleaning</h3>
+                    <p class="service-desc">Expert cutting and cleaning services customized to your requirements.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🚚</div>
+                    <h3 class="service-title">Reliable Delivery</h3>
+                    <p class="service-desc">On-time delivery to restaurants, hotels, and businesses across Goa.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🎣</div>
+                    <h3 class="service-title">Sustainable Sourcing</h3>
+                    <p class="service-desc">Committed to responsible fishing practices and supporting local communities.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">⭐</div>
+                    <h3 class="service-title">FSSAI Compliant</h3>
+                    <p class="service-desc">Highest quality and hygiene standards following FSSAI guidelines.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Get in Touch</h2>
+        <p style="text-align: center; font-size: 1.2em; color: #666; max-width: 700px; margin: 0 auto 50px;">
+            For bulk orders, restaurant supply, or any inquiries, reach out to us today!
+        </p>
+        
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+                </div>
+                <h3 class="contact-title">Call Us</h3>
+                <div class="contact-info">
+                    <a href="tel:+918275272334">+91 8275272334</a>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                </div>
+                <h3 class="contact-title">Email Us</h3>
+                <div class="contact-info">
+                    <a href="mailto:info@goamarine.com">info@goamarine.com</a>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </div>
+                <h3 class="contact-title">Location</h3>
+                <div class="contact-info">
+                    <p style="color: #666;">Serving across Goa</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 60px; padding: 40px; background: #f5f5f5; border-radius: 15px;">
+            <h3 style="color: #001a4d; font-size: 1.8em; margin-bottom: 15px;">Business Hours</h3>
+            <p style="font-size: 1.2em; color: #666; margin-bottom: 10px;">Monday - Saturday: 6:00 AM - 8:00 PM</p>
+            <p style="font-size: 1.2em; color: #666;">Sunday: 6:00 AM - 2:00 PM</p>
+            <p style="margin-top: 20px; color: #00bcd4; font-weight: 600;">Call us early morning to reserve today's fresh catch!</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2 style="font-style: italic; margin-bottom: 10px;">Goa Marine</h2>
+                <p style="color: #4dd0e1;">Premium Seafood Suppliers</p>
+            </div>
+            <p class="footer-text">© 2025 Goa Marine. All rights reserved.</p>
+            <p class="footer-text">Fresh from the sea to your table | Local, Fresh & Formalin Free</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.product-card, .stat-card, .service-card, .contact-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
